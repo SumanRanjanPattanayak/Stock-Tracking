@@ -50,7 +50,7 @@
             this.txtCategoryName.Location = new System.Drawing.Point(197, 48);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(128, 26);
-            this.txtCategoryName.TabIndex = 1;
+            this.txtCategoryName.TabIndex = 0;
             // 
             // btnSave
             // 
@@ -58,7 +58,7 @@
             this.btnSave.Location = new System.Drawing.Point(98, 112);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 39);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 

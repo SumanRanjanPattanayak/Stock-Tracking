@@ -26,5 +26,10 @@ namespace StockTracking
         {
             e.Handled = General.isNumber(e);
         }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = General.isNumber(e);
+        }
     }
 }

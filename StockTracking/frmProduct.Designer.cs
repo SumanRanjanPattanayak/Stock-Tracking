@@ -44,7 +44,7 @@
             this.txtProductName.Location = new System.Drawing.Point(189, 32);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(128, 26);
-            this.txtProductName.TabIndex = 6;
+            this.txtProductName.TabIndex = 0;
             // 
             // lblProductName
             // 
@@ -69,16 +69,17 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(189, 94);
+            this.txtPrice.Location = new System.Drawing.Point(189, 99);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(128, 26);
-            this.txtPrice.TabIndex = 6;
+            this.txtPrice.TabIndex = 2;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(33, 94);
+            this.lblPrice.Location = new System.Drawing.Point(33, 99);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(49, 20);
             this.lblPrice.TabIndex = 5;
@@ -86,12 +87,12 @@
             // 
             // cmbCategory
             // 
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(189, 65);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(128, 21);
-            this.cmbCategory.TabIndex = 7;
-            this.cmbCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCategory_KeyPress);
+            this.cmbCategory.Size = new System.Drawing.Size(128, 28);
+            this.cmbCategory.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -99,7 +100,7 @@
             this.btnClose.Location = new System.Drawing.Point(189, 153);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 39);
-            this.btnClose.TabIndex = 8;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -110,7 +111,7 @@
             this.btnSave.Location = new System.Drawing.Point(90, 153);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 39);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
