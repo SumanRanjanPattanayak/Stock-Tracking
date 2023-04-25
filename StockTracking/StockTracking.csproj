@@ -55,14 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CategoryBLL.cs" />
+    <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
+    <Compile Include="BLL\ProductBLL.cs" />
+    <Compile Include="BLL\SalesBLL.cs" />
     <Compile Include="DAL\CATEGORY.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CUSTOMER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DAO\CategoryDAO.cs" />
+    <Compile Include="DAL\DAO\CustomerDAO.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
+    <Compile Include="DAL\DAO\ProductDAO.cs" />
+    <Compile Include="DAL\DAO\SalesDAO.cs" />
+    <Compile Include="DAL\DAO\StockContext.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,6 +87,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DTO\CategoryDetailsDTO.cs" />
+    <Compile Include="DAL\DTO\CategoryDTO.cs" />
+    <Compile Include="DAL\DTO\CustomerDetailsDTO.cs" />
+    <Compile Include="DAL\DTO\CustomerDTO.cs" />
+    <Compile Include="DAL\DTO\ProductDetailsDTO.cs" />
+    <Compile Include="DAL\DTO\ProductDTO.cs" />
+    <Compile Include="DAL\DTO\SalesDetailsDTO.cs" />
+    <Compile Include="DAL\DTO\SalesDTO.cs" />
     <Compile Include="DAL\PRODUCT.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -102,6 +119,30 @@
     <Compile Include="frmCategory.Designer.cs">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerList.Designer.cs">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeleted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeleted.Designer.cs">
+      <DependentUpon>frmDeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +154,24 @@
     </Compile>
     <Compile Include="frmProductList.Designer.cs">
       <DependentUpon>frmProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSales.Designer.cs">
+      <DependentUpon>frmSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesList.Designer.cs">
+      <DependentUpon>frmSalesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockAlert.Designer.cs">
+      <DependentUpon>frmStockAlert.cs</DependentUpon>
     </Compile>
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
@@ -126,11 +185,32 @@
     <EmbeddedResource Include="frmCategoryList.resx">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerList.resx">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeleted.resx">
+      <DependentUpon>frmDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductList.resx">
       <DependentUpon>frmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSales.resx">
+      <DependentUpon>frmSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesList.resx">
+      <DependentUpon>frmSalesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockAlert.resx">
+      <DependentUpon>frmStockAlert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,8 +257,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

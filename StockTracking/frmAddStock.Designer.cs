@@ -31,14 +31,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvAddStock = new System.Windows.Forms.DataGridView();
             this.pnlCategory = new System.Windows.Forms.Panel();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.txtProductStock = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblProductStock = new System.Windows.Forms.Label();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.lblProductPrice = new System.Windows.Forms.Label();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.lblCategory = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.lblProductName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -66,6 +66,7 @@
             this.dgvAddStock.ReadOnly = true;
             this.dgvAddStock.Size = new System.Drawing.Size(327, 284);
             this.dgvAddStock.TabIndex = 1;
+            this.dgvAddStock.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddStock_RowEnter);
             // 
             // pnlCategory
             // 
@@ -76,6 +77,25 @@
             this.pnlCategory.Name = "pnlCategory";
             this.pnlCategory.Size = new System.Drawing.Size(327, 110);
             this.pnlCategory.TabIndex = 0;
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Location = new System.Drawing.Point(43, 33);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(81, 20);
+            this.lblCategory.TabIndex = 16;
+            this.lblCategory.Text = "Category";
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Location = new System.Drawing.Point(47, 67);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(128, 21);
+            this.cmbCategory.TabIndex = 0;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // txtProductStock
             // 
@@ -105,6 +125,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblProductStock
             // 
@@ -121,6 +142,7 @@
             this.txtProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductPrice.Location = new System.Drawing.Point(163, 52);
             this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.ReadOnly = true;
             this.txtProductPrice.Size = new System.Drawing.Size(128, 26);
             this.txtProductPrice.TabIndex = 1;
             // 
@@ -134,29 +156,12 @@
             this.lblProductPrice.TabIndex = 21;
             this.lblProductPrice.Text = "Product Price";
             // 
-            // cmbCategory
-            // 
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(47, 67);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(128, 21);
-            this.cmbCategory.TabIndex = 0;
-            // 
-            // lblCategory
-            // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(43, 33);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(81, 20);
-            this.lblCategory.TabIndex = 16;
-            this.lblCategory.Text = "Category";
-            // 
             // txtProductName
             // 
             this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductName.Location = new System.Drawing.Point(163, 20);
             this.txtProductName.Name = "txtProductName";
+            this.txtProductName.ReadOnly = true;
             this.txtProductName.Size = new System.Drawing.Size(128, 26);
             this.txtProductName.TabIndex = 0;
             // 
@@ -187,6 +192,7 @@
             this.Name = "frmAddStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Stock";
+            this.Load += new System.EventHandler(this.frmAddStock_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddStock)).EndInit();
             this.pnlCategory.ResumeLayout(false);

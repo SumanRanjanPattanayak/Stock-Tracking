@@ -87,7 +87,7 @@
             // 
             // cmbCategory
             // 
-            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(189, 65);
             this.cmbCategory.Name = "cmbCategory";
@@ -114,6 +114,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmProduct
             // 
@@ -131,6 +132,7 @@
             this.Name = "frmProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Product";
+            this.Load += new System.EventHandler(this.frmProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

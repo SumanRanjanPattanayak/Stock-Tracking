@@ -1,6 +1,6 @@
 ﻿namespace StockTracking
 {
-    partial class frmCategoryList
+    partial class frmCustomerList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,66 +29,66 @@
         private void InitializeComponent()
         {
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.txtCategoryName = new System.Windows.Forms.TextBox();
-            this.lblCategoryName = new System.Windows.Forms.Label();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.lblCustomerName = new System.Windows.Forms.Label();
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dgvCategoryList = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dgvCustomerList = new System.Windows.Forms.DataGridView();
             this.pnlSearch.SuspendLayout();
             this.pnlButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSearch
             // 
-            this.pnlSearch.Controls.Add(this.txtCategoryName);
-            this.pnlSearch.Controls.Add(this.lblCategoryName);
+            this.pnlSearch.Controls.Add(this.txtCustomerName);
+            this.pnlSearch.Controls.Add(this.lblCustomerName);
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(0, 0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(423, 77);
+            this.pnlSearch.Size = new System.Drawing.Size(623, 76);
             this.pnlSearch.TabIndex = 0;
             // 
-            // txtCategoryName
+            // txtCustomerName
             // 
-            this.txtCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryName.Location = new System.Drawing.Point(182, 29);
-            this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(196, 26);
-            this.txtCategoryName.TabIndex = 0;
-            this.txtCategoryName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
+            this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.Location = new System.Drawing.Point(196, 26);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(128, 26);
+            this.txtCustomerName.TabIndex = 0;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
-            // lblCategoryName
+            // lblCustomerName
             // 
-            this.lblCategoryName.AutoSize = true;
-            this.lblCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoryName.Location = new System.Drawing.Point(30, 29);
-            this.lblCategoryName.Name = "lblCategoryName";
-            this.lblCategoryName.Size = new System.Drawing.Size(132, 20);
-            this.lblCategoryName.TabIndex = 3;
-            this.lblCategoryName.Text = "Category Name";
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Location = new System.Drawing.Point(39, 29);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(137, 20);
+            this.lblCustomerName.TabIndex = 11;
+            this.lblCustomerName.Text = "Customer Name";
             // 
             // pnlButtons
             // 
             this.pnlButtons.Controls.Add(this.btnClose);
             this.pnlButtons.Controls.Add(this.btnDelete);
-            this.pnlButtons.Controls.Add(this.btnUpdate);
             this.pnlButtons.Controls.Add(this.btnAdd);
+            this.pnlButtons.Controls.Add(this.btnUpdate);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 317);
+            this.pnlButtons.Location = new System.Drawing.Point(0, 350);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(423, 84);
+            this.pnlButtons.Size = new System.Drawing.Size(623, 100);
             this.pnlButtons.TabIndex = 1;
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(321, 23);
+            this.btnClose.Location = new System.Drawing.Point(424, 29);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 39);
+            this.btnClose.Size = new System.Drawing.Size(80, 39);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -97,17 +97,28 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(222, 23);
+            this.btnDelete.Location = new System.Drawing.Point(308, 29);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 39);
+            this.btnDelete.Size = new System.Drawing.Size(80, 39);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(76, 29);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(80, 39);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(120, 23);
+            this.btnUpdate.Location = new System.Drawing.Point(192, 29);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(80, 39);
             this.btnUpdate.TabIndex = 1;
@@ -115,45 +126,34 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnAdd
+            // dgvCustomerList
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(22, 23);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 39);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.dgvCustomerList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCustomerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomerList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCustomerList.Location = new System.Drawing.Point(0, 76);
+            this.dgvCustomerList.Name = "dgvCustomerList";
+            this.dgvCustomerList.ReadOnly = true;
+            this.dgvCustomerList.Size = new System.Drawing.Size(623, 274);
+            this.dgvCustomerList.TabIndex = 1;
+            this.dgvCustomerList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerList_RowEnter);
             // 
-            // dgvCategoryList
-            // 
-            this.dgvCategoryList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCategoryList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategoryList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCategoryList.Location = new System.Drawing.Point(0, 77);
-            this.dgvCategoryList.Name = "dgvCategoryList";
-            this.dgvCategoryList.ReadOnly = true;
-            this.dgvCategoryList.Size = new System.Drawing.Size(423, 240);
-            this.dgvCategoryList.TabIndex = 2;
-            this.dgvCategoryList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoryList_RowEnter);
-            // 
-            // frmCategoryList
+            // frmCustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 401);
-            this.Controls.Add(this.dgvCategoryList);
+            this.ClientSize = new System.Drawing.Size(623, 450);
+            this.Controls.Add(this.dgvCustomerList);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.pnlSearch);
-            this.Name = "frmCategoryList";
+            this.Name = "frmCustomerList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Category List";
-            this.Load += new System.EventHandler(this.frmCategoryList_Load);
+            this.Text = "Customer List";
+            this.Load += new System.EventHandler(this.frmCustomerList_Load);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,12 +162,12 @@
 
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Panel pnlButtons;
-        private System.Windows.Forms.DataGridView dgvCategoryList;
-        private System.Windows.Forms.TextBox txtCategoryName;
-        private System.Windows.Forms.Label lblCategoryName;
+        private System.Windows.Forms.DataGridView dgvCustomerList;
+        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
