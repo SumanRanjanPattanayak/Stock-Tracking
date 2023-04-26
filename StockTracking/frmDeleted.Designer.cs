@@ -58,6 +58,7 @@
             this.cmbDeletedData.Name = "cmbDeletedData";
             this.cmbDeletedData.Size = new System.Drawing.Size(128, 28);
             this.cmbDeletedData.TabIndex = 0;
+            this.cmbDeletedData.SelectedIndexChanged += new System.EventHandler(this.cmbDeletedData_SelectedIndexChanged);
             // 
             // lblDeletedData
             // 
@@ -99,6 +100,7 @@
             this.btnRestore.TabIndex = 0;
             this.btnRestore.Text = "Restore";
             this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // dgvFormDeleted
             // 
@@ -110,6 +112,7 @@
             this.dgvFormDeleted.ReadOnly = true;
             this.dgvFormDeleted.Size = new System.Drawing.Size(525, 270);
             this.dgvFormDeleted.TabIndex = 1;
+            this.dgvFormDeleted.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFormDeleted_RowEnter);
             // 
             // frmDeleted
             // 

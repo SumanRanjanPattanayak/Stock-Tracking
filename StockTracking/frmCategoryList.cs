@@ -78,5 +78,28 @@ namespace StockTracking
                 dgvCategoryList.DataSource = dto.categories;
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.ID == 0)
+            {
+                MessageBox.Show("Please selecta a category from the Table!");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you Sure?", "Warning!!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Category was Deleted");
+                        bll = new CategoryBLL();
+                        dto = bll.Select();
+                        dgvCategoryList.DataSource = dto.categories;
+                        txtCategoryName.Clear();
+                    }
+                }
+            }
+        }
     }
 }

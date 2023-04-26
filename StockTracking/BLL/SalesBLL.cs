@@ -17,12 +17,25 @@ namespace StockTracking.BLL
         CustomerDAO customerdao = new CustomerDAO();
         public bool Delete(SalesDetailsDTO entity)
         {
-            throw new NotImplementedException();
+            SALE sales = new SALE();
+            sales.ID = entity.SalesID;
+            dao.Delete(sales);
+            PRODUCT product = new PRODUCT();
+            product.ID = entity.ProductID;
+            product.StockAmount = entity.StockAmount + entity.SalesAmount;
+            productdao.Update(product);
+            return true;
         }
 
         public bool GetBack(SalesDetailsDTO entity)
         {
-            throw new NotImplementedException();
+            dao.GetBack(entity.SalesID);
+            PRODUCT product = new PRODUCT();
+            product.ID = entity.ProductID;
+            int temp = entity.StockAmount - entity.SalesAmount;
+            product.StockAmount = temp;
+            productdao.Update(product);
+            return true;
         }
 
         public bool Insert(SalesDetailsDTO entity)
@@ -42,7 +55,6 @@ namespace StockTracking.BLL
             productdao.Update(product);
             return true;
         }
-
         public SalesDTO Select()
         {
             SalesDTO dto = new SalesDTO();
@@ -52,10 +64,27 @@ namespace StockTracking.BLL
             dto.Sales = dao.Select();
             return dto;
         }
+        public SalesDTO Select(bool isDeleted)
+        {
+            SalesDTO dto = new SalesDTO();
+            dto.Products = productdao.Select(isDeleted);
+            dto.Customers = customerdao.Select(isDeleted);
+            dto.Categories = categorydao.Select(isDeleted);
+            dto.Sales = dao.Select(isDeleted);
+            return dto;
+        }
 
         public bool Update(SalesDetailsDTO entity)
         {
-            throw new NotImplementedException();
+            SALE sales = new SALE();
+            sales.ID = entity.SalesID;
+            sales.ProductSalesAmount = entity.SalesAmount;
+            dao.Update(sales);
+            PRODUCT product = new PRODUCT();
+            product.ID = entity.ProductID;
+            product.StockAmount = entity.StockAmount;
+            productdao.Update(product);
+            return true;
         }
     }
 }

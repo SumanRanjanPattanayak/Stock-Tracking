@@ -78,5 +78,28 @@ namespace StockTracking
             detail.ID = Convert.ToInt32(dgvCustomerList.Rows[e.RowIndex].Cells[0].Value);
             detail.CustomerName = dgvCustomerList.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.ID == 0)
+            {
+                MessageBox.Show("Please select a customer from the Table.");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you Sure?", "Warning!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Customer was Deleted");
+                        bll = new CustomerBLL();
+                        dto = bll.Select();
+                        dgvCustomerList.DataSource = dto.customers;
+                        txtCustomerName.Clear();
+                    }
+                }
+            }
+        }
     }
 }

@@ -62,12 +62,15 @@ namespace StockTracking
             dgvSalesList.Columns[2].HeaderText = "Category Name";
             dgvSalesList.Columns[6].HeaderText = "Sales Amount";
             dgvSalesList.Columns[7].HeaderText = "Price";
-            dgvSalesList.Columns[8].HeaderText = "Sales Date";
+            dgvSalesList.Columns[10].HeaderText = "Sales Date";
             dgvSalesList.Columns[3].Visible = false;
             dgvSalesList.Columns[4].Visible = false;
             dgvSalesList.Columns[5].Visible = false;
             dgvSalesList.Columns[9].Visible = false;
-            dgvSalesList.Columns[10].Visible = false;
+            dgvSalesList.Columns[8].Visible = false;
+            dgvSalesList.Columns[11].Visible = false;
+            dgvSalesList.Columns[12].Visible = false;
+            dgvSalesList.Columns[13].Visible = false;
             cmbCategory.DataSource = dto.Categories;
             cmbCategory.DisplayMember = "CategoryName";
             cmbCategory.ValueMember = "ID";
@@ -161,7 +164,7 @@ namespace StockTracking
         private void dgvSalesList_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             detail = new SalesDetailsDTO();
-            detail.SalesID = Convert.ToInt32(dgvSalesList.Rows[e.RowIndex].Cells[10].Value);
+            detail.SalesID = Convert.ToInt32(dgvSalesList.Rows[e.RowIndex].Cells[9].Value);
             detail.ProductID = Convert.ToInt32(dgvSalesList.Rows[e.RowIndex].Cells[4].Value);
             detail.Price = Convert.ToInt32(dgvSalesList.Rows[e.RowIndex].Cells[7].Value);
             detail.SalesAmount = Convert.ToInt32(dgvSalesList.Rows[e.RowIndex].Cells[6].Value);
@@ -188,6 +191,29 @@ namespace StockTracking
                 dto = bll.Select();
                 dgvSalesList.DataSource = dto.Sales;
                 CleanFilter();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.SalesID == 0)
+            {
+                MessageBox.Show("Please selecta sales data from the table!");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you Sure?", "Warning!!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Sales was Deleted");
+                        bll = new SalesBLL();
+                        dto = bll.Select();
+                        dgvSalesList.DataSource= dto.Sales;
+                        CleanFilter();
+                    }
+                }
             }
         }
     }

@@ -78,9 +78,9 @@
             this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Controls.Add(this.btnUpdate);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 350);
+            this.pnlButtons.Location = new System.Drawing.Point(0, 356);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(623, 100);
+            this.pnlButtons.Size = new System.Drawing.Size(623, 94);
             this.pnlButtons.TabIndex = 1;
             // 
             // btnClose
@@ -103,6 +103,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -134,7 +135,7 @@
             this.dgvCustomerList.Location = new System.Drawing.Point(0, 76);
             this.dgvCustomerList.Name = "dgvCustomerList";
             this.dgvCustomerList.ReadOnly = true;
-            this.dgvCustomerList.Size = new System.Drawing.Size(623, 274);
+            this.dgvCustomerList.Size = new System.Drawing.Size(623, 280);
             this.dgvCustomerList.TabIndex = 1;
             this.dgvCustomerList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerList_RowEnter);
             // 

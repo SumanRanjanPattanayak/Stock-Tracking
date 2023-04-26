@@ -146,9 +146,27 @@ namespace StockTracking
                 }
                 else
                 {
-                    if (detail.SalesAmount == Convert.ToInt32())
+                    if (detail.SalesAmount == Convert.ToInt32(txtProductSalesAmount.Text))
                     {
-
+                        MessageBox.Show("There is no changes");
+                    }
+                    else
+                    {
+                        int temp = detail.SalesAmount + detail.StockAmount;
+                        if (temp < Convert.ToInt32(txtProductSalesAmount.Text))
+                        {
+                            MessageBox.Show("You don't have enough product for Sale");
+                        }
+                        else
+                        {
+                            detail.SalesAmount = Convert.ToInt32(txtProductSalesAmount.Text);
+                            detail.StockAmount = temp - detail.SalesAmount;
+                            if (bll.Update(detail))
+                            {
+                                MessageBox.Show("Sales was Updated");
+                                this.Close();
+                            }
+                        }
                     }
                 }
             }

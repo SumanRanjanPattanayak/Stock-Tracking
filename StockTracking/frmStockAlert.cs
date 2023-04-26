@@ -32,7 +32,7 @@ namespace StockTracking
         private void frmStockAlert_Load(object sender, EventArgs e)
         {
             dto = bll.Select();
-            dto.products = dto.products.Where(x=>x.StockAmount == 10).ToList();
+            dto.products = dto.products.Where(x=>x.StockAmount <= 10).ToList();
             dgvStockAlert.DataSource = dto.products;
             dgvStockAlert.Columns[0].HeaderText = "Product Name";
             dgvStockAlert.Columns[1].HeaderText = "Category Name";

@@ -63,6 +63,7 @@ namespace StockTracking
             dgvProductList.Columns[3].HeaderText = "Price";
             dgvProductList.Columns[4].Visible = false;
             dgvProductList.Columns[5].Visible = false;
+            dgvProductList.Columns[6].Visible = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -166,6 +167,30 @@ namespace StockTracking
                 dgvProductList.DataSource = dto.products;
                 CleanFilters();
                 
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.ProductID == 0)
+            {
+                MessageBox.Show("Please select a product from Table");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you Sure?", "Warning!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Product was Deleted.");
+                        bll = new ProductBLL();
+                        dto = bll.Select();
+                        dgvProductList.DataSource = dto.products;
+                        cmbCategory.DataSource = dto.categories;
+                        CleanFilters() ;
+                    }
+                }
             }
         }
     }
